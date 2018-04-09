@@ -24,5 +24,12 @@ struct Product : Codable {
 		image = try values.decodeIfPresent(String.self, forKey: .image)
         description = try values.decodeIfPresent(String.self, forKey: .description)
 	}
+    init(from coreData: ProductDM) {
+        productId = coreData.productId
+        name = coreData.name
+        price = Int(coreData.price)
+        image = coreData.image
+        description = ""
+    }
 
 }

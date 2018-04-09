@@ -18,14 +18,21 @@ struct ProductViewModel {
     
     func fetchProducts(completionHandler: @escaping (ProductListResponse) -> Void){
         
+        
+        let products = CoreDataManager.shared.getProducts()
+        self.dataSource?.data.value = products
+        
+        
         NetworkManager.shared.getProductList { (response:ProductListResponse) in
             if let products = response.products {
+                CoreDataManager.shared.saveProducts(products: products)
                 self.dataSource?.data.value = products
             }
-            
             completionHandler(response)
         }
     }
+    
+    
     
 
 }

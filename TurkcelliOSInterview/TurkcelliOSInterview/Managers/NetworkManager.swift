@@ -19,11 +19,26 @@ class NetworkManager {
         let url = URL(string: "https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/list")
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            let jsonDecoder = JSONDecoder()
-            let responseModel = try? jsonDecoder.decode(ProductListResponse.self, from: data!)
-            DispatchQueue.main.async {
-                completion(responseModel!)
+            
+            guard error == nil else {
+                print("Error: calling GET on /cart/list")
+                print(error!)
+                return
             }
+            guard data != nil else {
+                print("Error: did not receive data")
+                return
+            }
+            guard let responseModel = try? JSONDecoder().decode(ProductListResponse.self, from: data!)
+                else {
+                    print("error trying to convert data to object")
+                    return
+            }
+            
+            DispatchQueue.main.async {
+                completion(responseModel)
+            }
+            
         }
         task.resume()
     }

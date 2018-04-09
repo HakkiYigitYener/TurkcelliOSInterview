@@ -10,6 +10,7 @@
 		F01B738B20791DFE00877EE2 /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01B738A20791DFE00877EE2 /* ProductDataSource.swift */; };
 		F01B738D20791E9300877EE2 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01B738C20791E9300877EE2 /* DynamicValue.swift */; };
 		F01B738F20791F4500877EE2 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01B738E20791F4500877EE2 /* ProductViewModel.swift */; };
+		F01B7391207AE50F00877EE2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01B7390207AE50F00877EE2 /* CoreDataManager.swift */; };
 		F0AC8B052078D4FB00ECA552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC8B042078D4FB00ECA552 /* AppDelegate.swift */; };
 		F0AC8B072078D4FB00ECA552 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC8B062078D4FB00ECA552 /* ViewController.swift */; };
 		F0AC8B0A2078D4FB00ECA552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0AC8B082078D4FB00ECA552 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		F01B738A20791DFE00877EE2 /* ProductDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
 		F01B738C20791E9300877EE2 /* DynamicValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
 		F01B738E20791F4500877EE2 /* ProductViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		F01B7390207AE50F00877EE2 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F0AC8B012078D4FB00ECA552 /* TurkcelliOSInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurkcelliOSInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AC8B042078D4FB00ECA552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0AC8B062078D4FB00ECA552 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		F0AC8B272078D7FB00ECA552 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F01B7390207AE50F00877EE2 /* CoreDataManager.swift */,
 				F0AC8B282078D81B00ECA552 /* NetworkManager.swift */,
 			);
 			path = Managers;
@@ -282,6 +285,7 @@
 				F0AC8B2D2078D8B500ECA552 /* ProductListResponse.swift in Sources */,
 				F0AC8B0D2078D4FB00ECA552 /* TurkcelliOSInterview.xcdatamodeld in Sources */,
 				F0AC8B382078DEE900ECA552 /* ProductListCell.swift in Sources */,
+				F01B7391207AE50F00877EE2 /* CoreDataManager.swift in Sources */,
 				F01B738B20791DFE00877EE2 /* ProductDataSource.swift in Sources */,
 				F0AC8B052078D4FB00ECA552 /* AppDelegate.swift in Sources */,
 				F01B738D20791E9300877EE2 /* DynamicValue.swift in Sources */,

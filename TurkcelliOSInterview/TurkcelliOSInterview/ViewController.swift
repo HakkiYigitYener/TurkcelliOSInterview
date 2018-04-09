@@ -24,8 +24,6 @@ class ViewController: UIViewController {
         collectionView.register(UINib(nibName: "ProductListCell", bundle: nil), forCellWithReuseIdentifier: "ProductListCell")
         
         collectionView.delegate = self.dataSource
-        
-        
         self.collectionView.dataSource = self.dataSource
         self.dataSource.data.addAndNotify(observer: self) { [weak self] in
             self?.collectionView.reloadData()
