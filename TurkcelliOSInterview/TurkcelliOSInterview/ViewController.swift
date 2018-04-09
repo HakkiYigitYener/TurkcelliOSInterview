@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let dataSource = ProductDataSource()
@@ -21,11 +21,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+        
         collectionView.register(UINib(nibName: "ProductListCell", bundle: nil), forCellWithReuseIdentifier: "ProductListCell")
         
         collectionView.delegate = self.dataSource
         self.collectionView.dataSource = self.dataSource
-        self.dataSource.data.addAndNotify(observer: self) { [weak self] in
+        self.dataSource.filteredData.addAndNotify(observer: self) { [weak self] in
             self?.collectionView.reloadData()
         }
         
@@ -39,5 +43,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.dataSource.searchText = searchText
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 }
 

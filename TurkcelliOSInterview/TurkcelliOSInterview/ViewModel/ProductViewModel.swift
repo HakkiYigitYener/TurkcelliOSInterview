@@ -21,12 +21,14 @@ struct ProductViewModel {
         
         let products = CoreDataManager.shared.getProducts()
         self.dataSource?.data.value = products
+        self.dataSource?.filteredData.value = products
         
         
         NetworkManager.shared.getProductList { (response:ProductListResponse) in
             if let products = response.products {
                 CoreDataManager.shared.saveProducts(products: products)
                 self.dataSource?.data.value = products
+                self.dataSource?.filteredData.value = products
             }
             completionHandler(response)
         }
